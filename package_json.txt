@@ -1,0 +1,8 @@
+project name, version, how many commands are use,
+how many, which package for tesing, establishing connection with db.
+
+
+it store coding related information.
+
+how to make it: npm init
+npm(node package manager)
