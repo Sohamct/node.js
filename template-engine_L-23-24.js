@@ -14,7 +14,8 @@ app.get('/profile', (_, resp) => {
     const user = {
         name: 'soham tejani',
         email: 'sohamtejani699@gmail.com',
-        city: 'bhavnagar'
+        city: 'bhavnagar',
+        skills: ['php', 'js', 'c++', 'java', 'python', 'node js']
     }
     resp.render('profile', { user })
 });
@@ -22,6 +23,10 @@ app.get('/profile', (_, resp) => {
 app.get('/about', (_, resp) => {
     resp.sendFile(`${publicPath}/about.html`)
 });
+
+app.get('/login', (_, resp) => {
+    resp.render('login');
+})
 
 app.get('/help', (_, resp) => {
     resp.sendFile(`${publicPath}/help.html`)
