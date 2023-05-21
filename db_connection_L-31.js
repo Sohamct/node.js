@@ -8,16 +8,12 @@ const database = 'e-comm';
 // if we are using await, that function must bt async.
 const client = new MongoClient(url)
 
-async function getData() {
+async function dbConnect() {
     let result = await client.connect()
     console.log("Connection has been made.")
 
     let db = result.db(database)
-    let collection = db.collection('products')
-    let response = await collection.find({}).toArray();
-    // let response = await collection.find({ name: 'vivo v73' }).toArray();
-
-    console.log(response)
+    return db.collection('products')
 }
 
-getData();
+module.exports = dbConnect
